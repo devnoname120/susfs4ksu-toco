@@ -11,7 +11,7 @@
 
 ## Patch Instruction (For non-GKI only) ##
 **- Prerequisite -**
-1. All susfs patches are based on the original official KernelSU (the one from weishu), so you should clone his repo for a better patching result.
+1. All susfs patches are based on the **original official KernelSU (the one from weishu)** with **latest release tag**, so you should clone his repo with **latest release tag** for a better patching result.
 2. After cloning the KernelSU to your kernel source, inside KernelSU folder, apply a revert commit from `https://github.com/tiann/KernelSU/commit/898e9d4f8ca9b2f46b0c6b36b80a872b5b88d899`
 3. Also you have to manually implement the NON-KPROBE hooks in the kernel by yourself since `SUS_SU` feature is NOT supported for NON-GKI kernel anymore. See `https://kernelsu.org/guide/how-to-integrate-for-non-gki.html#manually-modify-the-kernel-source`
 4. Replace all lines starting with `#ifdef CONFIG_KPROBES` to `#if defined(CONFIG_KPROBES) && 0` for all files within KernelSU folder, this is to tell KernelSU not to use any kprobe hooks.
